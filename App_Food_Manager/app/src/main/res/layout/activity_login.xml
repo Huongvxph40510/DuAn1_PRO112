@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/logo" />
+    <com.google.android.material.textfield.TextInputLayout
+        app:startIconDrawable="@drawable/ic_person"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="20dp"
+        app:endIconMode="clear_text"
+        android:hint="Tên đăng nhập"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:background="@drawable/ed_custom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/edUserName"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:startIconDrawable="@drawable/ic_lock"
+        app:endIconMode="password_toggle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:hint="Mật khẩu"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:background="@drawable/ed_custom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textPassword"
+            android:id="@+id/edPassWord"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="70dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:text="Đăng nhập"
+        android:background="@drawable/btn_custom"
+        android:id="@+id/btnLogin"/>
+
+
+</LinearLayout>
