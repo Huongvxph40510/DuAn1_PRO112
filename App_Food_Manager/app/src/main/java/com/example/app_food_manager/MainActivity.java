@@ -38,15 +38,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BanDAO banDAO= new BanDAO();
-        List<BanDTO> list = new ArrayList<>();
-        list = banDAO.getAll();
-
-        for(int i = 0; i<list.size(); i++){
-            BanDTO objBan = list.get(i);
-            Log.d("zzzzzzzzzzz", "id :"+objBan.getId()+"số bàn :"+objBan.getSoBan()+"trạng thái :"+objBan.getTrangThai() );
-        }
-
         drawer = findViewById(R.id.drawer_layout);
         toolbar = findViewById(R.id.toolbar);
         nv = findViewById(R.id.nvView);
