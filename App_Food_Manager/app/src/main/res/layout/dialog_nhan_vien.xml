@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="30dp"
+    android:paddingBottom="30dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thêm Nhân Viên"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:layout_gravity="center"
+        android:textColor="#D50000"/>
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/avt"
+        android:layout_gravity="center"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Tên nhân viên"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:background="@drawable/ed_custom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/edTen"
+            android:padding="10dp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Tài khoản"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:background="@drawable/ed_custom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/edTaiKhoan"
+            android:padding="10dp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Mật khẩu"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:background="@drawable/ed_custom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/edMatKhau"
+            android:padding="10dp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Năm sinh"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:background="@drawable/ed_custom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/edNamSinh"
+            android:padding="10dp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="CCCD"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:background="@drawable/ed_custom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/edCCCD"
+            android:padding="10dp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thêm"
+            android:id="@+id/btnThem"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hủy"
+            android:layout_marginLeft="50dp"
+            android:id="@+id/btnHuy"/>
+    </LinearLayout>
+
+</LinearLayout>

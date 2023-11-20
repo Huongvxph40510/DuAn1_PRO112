@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/img_table"
+    >
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:src="@drawable/ic_edit"
+        android:id="@+id/btnEdit"
+        />
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:src="@drawable/ic_delete"
+        android:id="@+id/btnDel"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp"
+        android:background="#66000000"
+        android:orientation="horizontal"
+        android:padding="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvBan"
+            android:text="Bàn số 001"
+            android:textSize="18dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvTrangThai"
+            android:text="Trạng thái: còn trống"
+            android:textSize="18dp"
+            android:layout_marginLeft="100dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+</LinearLayout>
