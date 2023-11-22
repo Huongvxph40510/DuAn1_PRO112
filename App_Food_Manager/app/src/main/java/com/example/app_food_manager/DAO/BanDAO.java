@@ -82,4 +82,22 @@ public class BanDAO {
         }
         return kq;
     }
+    public BanDTO getID(int id){
+        BanDTO objBan = new BanDTO();
+        try{
+            String sql = "Select * from Ban where id = " + id;
+            Statement statement = this.objConn.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()){
+                objBan.setId(resultSet.getInt("id"));
+                objBan.setSoBan(resultSet.getString("soBan"));
+                objBan.setTrangThai(resultSet.getInt("trangThai"));
+            }
+            Log.e("zzzzzzzzzz", "getAll: đọc oke " );
+        }catch (Exception e){
+            Log.e("zzzzzzzzzz", "getAll: Có lỗi truy vấn dữ liệu " );
+            e.printStackTrace();
+        }
+        return objBan;
+    }
 }

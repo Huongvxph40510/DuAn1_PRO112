@@ -95,4 +95,25 @@ public class NhanVienDAO {
         }
         return kq;
     }
+    public NhanVienDTO getID(int id){
+        NhanVienDTO objNhanVien = new NhanVienDTO();
+        try{
+            String sql = "Select * from NhanVien where id =" + id;
+            Statement statement = this.objConn.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()){
+                objNhanVien.setId(resultSet.getInt("id"));
+                objNhanVien.setTenNhanVien(resultSet.getString("tenNhanVien"));
+                objNhanVien.setTaiKhoan(resultSet.getString("taiKhoan"));
+                objNhanVien.setMatKhau(resultSet.getString("matKhau"));
+                objNhanVien.setNamSinh(resultSet.getString("namSinh"));
+                objNhanVien.setCCCD(resultSet.getString("CCCD"));
+            }
+            Log.e("zzzzzzzzzz", "getAll: đọc oke " );
+        }catch (Exception e){
+            Log.e("zzzzzzzzzz", "getAll: Có lỗi truy vấn dữ liệu " );
+            e.printStackTrace();
+        }
+        return objNhanVien;
+    }
 }
