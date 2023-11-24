@@ -1,4 +1,4 @@
-package com.example.app_food_staff;
+package com.example.app_food_manager;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class Main_NhanVien extends AppCompatActivity {
     DrawerLayout drawer;
     Toolbar toolbar;
     View mHeaderView;
@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_nhan_vien);
         drawer = findViewById(R.id.drawer_layouts);
         toolbar = findViewById(R.id.toolbars);
         nv = findViewById(R.id.nvViews);
@@ -30,6 +30,5 @@ public class MainActivity extends AppCompatActivity {
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.open, R.string.close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
     }
 }

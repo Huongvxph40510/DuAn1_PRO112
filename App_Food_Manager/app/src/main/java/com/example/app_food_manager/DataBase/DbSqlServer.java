@@ -12,7 +12,7 @@ public class DbSqlServer {
     final String TAG = "zzzzzz";
 
     public Connection openConnect(){
-        String ip = "192.168.1.110", port = "1433", user = "sa", pass = "mot23456", db = "QLGoiMon";
+        String ip = "192.168.137.130", port = "1433", user = "sa", pass = "mot23456", db = "QLGoiMon";
         StrictMode.ThreadPolicy threadPolicy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(threadPolicy);
 
