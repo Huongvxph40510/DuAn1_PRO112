@@ -16,9 +16,6 @@
         android:theme="@style/Theme.App_Food_Manager"
         tools:targetApi="31">
         <activity
-            android:name=".Main_NhanVien"
-            android:exported="false" />
-        <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
