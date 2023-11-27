@@ -14,7 +14,7 @@
         <item android:title="Đơn hàng">
             <menu>
                 <item
-                    android:id="@+id/menu_don_hang"
+                    android:id="@+id/menu_don_hang_tao"
                     android:title="Đơn hàng đã thêm" />
                 <item
                     android:id="@+id/menu_don_hang_thanh_toan"

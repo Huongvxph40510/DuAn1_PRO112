@@ -49,6 +49,12 @@
             android:id="@+id/edPassWord"/>
 
     </com.google.android.material.textfield.TextInputLayout>
+    <CheckBox
+        android:id="@+id/chkRememberPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lưu mật khẩu"
+        android:layout_marginLeft="30dp"/>
 
     <Button
         android:layout_width="match_parent"
