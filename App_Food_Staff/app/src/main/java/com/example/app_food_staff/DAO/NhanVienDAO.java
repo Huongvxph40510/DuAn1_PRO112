@@ -62,4 +62,25 @@ public class NhanVienDAO {
         }
         return objNhanVien;
     }
+    public int update(NhanVienDTO objNhanVien){
+        int kq = -1;
+        String tenNhanVien = objNhanVien.getTenNhanVien();
+        String taiKhoan = objNhanVien.getTaiKhoan();
+        String matKhau = objNhanVien.getMatKhau();
+        String soDienThoai = objNhanVien.getSoDienThoai();
+        String CCCD = objNhanVien.getCCCD();
+        int id = objNhanVien.getId();
+        try {
+            String sql = "UPDATE NhanVien\n" +
+                    "SET tenNhanVien = N'"+ tenNhanVien +"',taiKhoan= '"+taiKhoan+"',matKhau= '"+matKhau+"',soDienThoai= '"+soDienThoai+"',CCCD= '"+CCCD+ "'\n" +
+                    "WHERE id = '"+ id + "';";
+            Statement statement = this.objConn.createStatement();
+            kq = statement.executeUpdate(sql);
+            Log.e("zzzzzzzzzz", "getAll: xóa oke" );
+        }catch (Exception e){
+            kq = -1;
+            Log.e("zzzzzzzzzz", "getAll: xóa khong thành công" );
+        }
+        return kq;
+    }
 }
