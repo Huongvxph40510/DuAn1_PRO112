@@ -136,4 +136,44 @@ public class HoaDonDAO {
         }
         return tongHoaDon;
     }
+    public List<HoaDonDTO> getTheoNgayTao(String ngay, int idNhanVienTao){
+        List<HoaDonDTO> list = new ArrayList<>();
+        try{
+            String sql = "select * from HoaDon where ngayTao ='"+ngay+"' and idNhanVienTao = " +idNhanVienTao;
+            Statement statement = this.objConn.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()){
+                HoaDonDTO objHoaDon = new HoaDonDTO();
+                objHoaDon.setId(resultSet.getInt(1));
+                objHoaDon.setNgayTao(resultSet.getDate(2));
+                objHoaDon.setIdBan(resultSet.getInt(3));
+                objHoaDon.setIdNhanVienTao(resultSet.getInt(4));
+                objHoaDon.setIdNhanVienThanToan(resultSet.getInt(5));
+                objHoaDon.setTrangThai(resultSet.getInt(6));
+                list.add(objHoaDon);
+            }
+            Log.e("zzzzzzzzzz", "getAll: đọc oke " );
+        }catch (Exception e){
+            Log.e("zzzzzzzzzz", "getAll: Có lỗi truy vấn dữ liệu " );
+            e.printStackTrace();
+        }
+        return list;
+    }
+    public int getSoHoaDonTao(String ngay, int idNhanVienTao){
+        int tongHoaDon = 0;
+        try{
+            String sql = "select COUNT(id) from HoaDon\n" +
+                    "where ngayTao ='"+ngay+"' and idNhanVienTao = " +idNhanVienTao;
+            Statement statement = this.objConn.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()){
+                tongHoaDon = resultSet.getInt(1);
+            }
+            Log.e("zzzzzzzzzz", "getAll: đọc oke " );
+        }catch (Exception e){
+            Log.e("zzzzzzzzzz", "getAll: Có lỗi truy vấn dữ liệu " );
+            e.printStackTrace();
+        }
+        return tongHoaDon;
+    }
 }

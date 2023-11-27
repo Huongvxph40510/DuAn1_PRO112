@@ -55,6 +55,7 @@ public class BanDAO {
         }
         return objBan;
     }
+
     public int setTrangthai(BanDTO objBan){
         int trangThai = 0;
         if(objBan.getTrangThai() == 0){
