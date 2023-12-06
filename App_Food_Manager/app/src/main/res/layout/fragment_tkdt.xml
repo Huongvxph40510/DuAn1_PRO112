@@ -26,6 +26,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textStyle="bold"
+            android:enabled="false"
+            android:textColor="@color/black"
             android:text="Từ ngày:"/>
 
         <EditText
@@ -58,6 +60,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textStyle="bold"
+            android:enabled="false"
+            android:textColor="@color/black"
             android:text="Đến ngày:"/>
 
         <EditText

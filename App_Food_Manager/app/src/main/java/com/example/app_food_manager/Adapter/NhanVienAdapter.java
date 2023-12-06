@@ -22,7 +22,7 @@ public class NhanVienAdapter extends ArrayAdapter<NhanVienDTO> {
     private Context context;
     NhanVienFragment fragment;
     private ArrayList<NhanVienDTO> list;
-    TextView tvId, tvTen, tvTaiKhoan,tvMatKhau,tvNamSinh,tvCCCD;
+    TextView tvId, tvTen, tvTaiKhoan,tvMatKhau,tvSoDienThoai,tvCCCD;
     ImageButton btnEdit,btnDel;
     public NhanVienAdapter(@NonNull Context context, NhanVienFragment fragment, ArrayList<NhanVienDTO> list) {
         super(context, 0, list);
@@ -46,7 +46,7 @@ public class NhanVienAdapter extends ArrayAdapter<NhanVienDTO> {
             tvTen = v.findViewById(R.id.tvTen);
             tvTaiKhoan = v.findViewById(R.id.tvTaiKhoan);
             tvMatKhau = v.findViewById(R.id.tvMatKhau);
-            tvNamSinh = v.findViewById(R.id.tvNamSinh);
+            tvSoDienThoai = v.findViewById(R.id.tvSoDienThoai);
             tvCCCD  = v.findViewById(R.id.tvCCCD);
             btnEdit = v.findViewById(R.id.btnEdit);
             btnDel  = v.findViewById(R.id.btnDel);
@@ -55,7 +55,7 @@ public class NhanVienAdapter extends ArrayAdapter<NhanVienDTO> {
             tvTen.setText("Tên nhân viên: "+ item.getTenNhanVien());
             tvTaiKhoan.setText("Tài Khoản: "+ item.getTaiKhoan());
             tvMatKhau.setText("Mật khẩu: "+ item.getMatKhau());
-            tvNamSinh.setText("Năm sinh: "+ item.getNamSinh());
+            tvSoDienThoai.setText("Số điện thoại: "+ item.getSoDienThoai());
             tvCCCD.setText("CCCD: "+ item.getCCCD());
 
             btnDel.setOnClickListener(new View.OnClickListener() {

@@ -42,11 +42,11 @@
             android:textSize="18dp"
             />
         <TextView
-            android:id="@+id/tvNamSinh"
+            android:id="@+id/tvSoDienThoai"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="Năm sinh:"
+            android:text="Số điện thoại: "
             android:textSize="18dp"
             />
         <TextView

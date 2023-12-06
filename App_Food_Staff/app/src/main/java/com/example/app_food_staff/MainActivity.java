@@ -65,7 +65,8 @@ public class MainActivity extends AppCompatActivity {
                     getSupportActionBar().setTitle("Quản lí hóa đơn");
                 } else if (id == R.id.menu_ban){
                     getSupportFragmentManager().beginTransaction().replace(R.id.flContents,banFragment).commit();
-                    getSupportActionBar().setTitle("Quản lí bàn");}else if (id == R.id.menu_tai_khoan){
+                    getSupportActionBar().setTitle("Quản lí bàn");
+                }else if (id == R.id.menu_tai_khoan){
                     getSupportFragmentManager().beginTransaction().replace(R.id.flContents,thongTinFragment).commit();
                     getSupportActionBar().setTitle("Quản lí tài khoản");
                 }else if (id == R.id.menu_don_hang_tao){

@@ -71,13 +71,13 @@
         android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:hint="Năm sinh"
+        android:hint="Số điện thoại"
         >
         <com.google.android.material.textfield.TextInputEditText
             android:background="@drawable/ed_custom"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/edNamSinh"
+            android:id="@+id/edSoDienThoai"
             android:padding="10dp"
             />
     </com.google.android.material.textfield.TextInputLayout>

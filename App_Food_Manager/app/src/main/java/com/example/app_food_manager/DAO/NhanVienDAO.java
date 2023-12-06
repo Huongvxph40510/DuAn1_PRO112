@@ -30,7 +30,7 @@ public class NhanVienDAO {
                 objNhanVien.setTenNhanVien(resultSet.getString("tenNhanVien"));
                 objNhanVien.setTaiKhoan(resultSet.getString("taiKhoan"));
                 objNhanVien.setMatKhau(resultSet.getString("matKhau"));
-                objNhanVien.setNamSinh(resultSet.getString("namSinh"));
+                objNhanVien.setSoDienThoai(resultSet.getString("soDienThoai"));
                 objNhanVien.setCCCD(resultSet.getString("CCCD"));
                 list.add(objNhanVien);
             }
@@ -55,16 +55,37 @@ public class NhanVienDAO {
         }
         return kq;
     }
+    public NhanVienDTO getID(int id){
+        NhanVienDTO objNhanVien = new NhanVienDTO();
+        try{
+            String sql = "Select * from NhanVien where id =" + id;
+            Statement statement = this.objConn.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()){
+                objNhanVien.setId(resultSet.getInt("id"));
+                objNhanVien.setTenNhanVien(resultSet.getString("tenNhanVien"));
+                objNhanVien.setTaiKhoan(resultSet.getString("taiKhoan"));
+                objNhanVien.setMatKhau(resultSet.getString("matKhau"));
+                objNhanVien.setSoDienThoai(resultSet.getString("soDienThoai"));
+                objNhanVien.setCCCD(resultSet.getString("CCCD"));
+            }
+            Log.e("zzzzzzzzzz", "getAll: đọc oke " );
+        }catch (Exception e){
+            Log.e("zzzzzzzzzz", "getAll: Có lỗi truy vấn dữ liệu " );
+            e.printStackTrace();
+        }
+        return objNhanVien;
+    }
     public int insert(NhanVienDTO objNhanVien){
         int kq = -1;
         String tenNhanVien = objNhanVien.getTenNhanVien();
         String taiKhoan = objNhanVien.getTaiKhoan();
         String matKhau = objNhanVien.getMatKhau();
-        String namSinh = objNhanVien.getNamSinh();
+        String soDienThoai = objNhanVien.getSoDienThoai();
         String CCCD = objNhanVien.getCCCD();
         try {
-            String sql = "INSERT INTO NhanVien(tenNhanVien,taiKhoan,matKhau,namSinh,CCCD)\n" +
-                    "VALUES (N'"+tenNhanVien+"','" +taiKhoan+"','" +matKhau+"','" +namSinh+"','" +CCCD+"');";
+            String sql = "INSERT INTO NhanVien(tenNhanVien,taiKhoan,matKhau,soDienThoai,CCCD)\n" +
+                    "VALUES (N'"+tenNhanVien+"','" +taiKhoan+"','" +matKhau+"','" +soDienThoai+"','" +CCCD+"');";
             Statement statement = this.objConn.createStatement();
             kq = statement.executeUpdate(sql);
             Log.e("zzzzzzzzzz", "getAll: xóa oke" );
@@ -79,12 +100,12 @@ public class NhanVienDAO {
         String tenNhanVien = objNhanVien.getTenNhanVien();
         String taiKhoan = objNhanVien.getTaiKhoan();
         String matKhau = objNhanVien.getMatKhau();
-        String namSinh = objNhanVien.getNamSinh();
+        String soDienThoai = objNhanVien.getSoDienThoai();
         String CCCD = objNhanVien.getCCCD();
         int id = objNhanVien.getId();
         try {
             String sql = "UPDATE NhanVien\n" +
-                    "SET tenNhanVien = N'"+ tenNhanVien +"',taiKhoan= '"+taiKhoan+"',matKhau= '"+matKhau+"',namSinh= '"+namSinh+"',CCCD= '"+CCCD+ "'\n" +
+                    "SET tenNhanVien = N'"+ tenNhanVien +"',taiKhoan= '"+taiKhoan+"',matKhau= '"+matKhau+"',soDienThoai= '"+soDienThoai+"',CCCD= '"+CCCD+ "'\n" +
                     "WHERE id = '"+ id + "';";
             Statement statement = this.objConn.createStatement();
             kq = statement.executeUpdate(sql);
@@ -94,26 +115,5 @@ public class NhanVienDAO {
             Log.e("zzzzzzzzzz", "getAll: xóa khong thành công" );
         }
         return kq;
-    }
-    public NhanVienDTO getID(int id){
-        NhanVienDTO objNhanVien = new NhanVienDTO();
-        try{
-            String sql = "Select * from NhanVien where id =" + id;
-            Statement statement = this.objConn.createStatement();
-            ResultSet resultSet = statement.executeQuery(sql);
-            while (resultSet.next()){
-                objNhanVien.setId(resultSet.getInt("id"));
-                objNhanVien.setTenNhanVien(resultSet.getString("tenNhanVien"));
-                objNhanVien.setTaiKhoan(resultSet.getString("taiKhoan"));
-                objNhanVien.setMatKhau(resultSet.getString("matKhau"));
-                objNhanVien.setNamSinh(resultSet.getString("namSinh"));
-                objNhanVien.setCCCD(resultSet.getString("CCCD"));
-            }
-            Log.e("zzzzzzzzzz", "getAll: đọc oke " );
-        }catch (Exception e){
-            Log.e("zzzzzzzzzz", "getAll: Có lỗi truy vấn dữ liệu " );
-            e.printStackTrace();
-        }
-        return objNhanVien;
     }
 }

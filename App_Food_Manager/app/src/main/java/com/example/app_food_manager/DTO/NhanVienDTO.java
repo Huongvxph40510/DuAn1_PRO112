@@ -5,17 +5,18 @@ public class NhanVienDTO {
     String tenNhanVien;
     String taiKhoan;
     String matKhau;
-    String namSinh;
+    String soDienThoai;
     String CCCD;
 
     public NhanVienDTO() {
     }
 
-    public NhanVienDTO(String tenNhanVien, String taiKhoan, String matKhau, String namSinh, String CCCD) {
+    public NhanVienDTO(int id, String tenNhanVien, String taiKhoan, String matKhau, String soDienThoai, String CCCD) {
+        this.id = id;
         this.tenNhanVien = tenNhanVien;
         this.taiKhoan = taiKhoan;
         this.matKhau = matKhau;
-        this.namSinh = namSinh;
+        this.soDienThoai = soDienThoai;
         this.CCCD = CCCD;
     }
 
@@ -51,12 +52,12 @@ public class NhanVienDTO {
         this.matKhau = matKhau;
     }
 
-    public String getNamSinh() {
-        return namSinh;
+    public String getSoDienThoai() {
+        return soDienThoai;
     }
 
-    public void setNamSinh(String namSinh) {
-        this.namSinh = namSinh;
+    public void setSoDienThoai(String soDienThoai) {
+        this.soDienThoai = soDienThoai;
     }
 
     public String getCCCD() {

@@ -4,6 +4,7 @@ public class HoaDonChiTietDTO {
     int idHoaDon;
     int idMonAn;
     int soLuong;
+    int gia;
 
     public HoaDonChiTietDTO() {
     }
@@ -36,5 +37,13 @@ public class HoaDonChiTietDTO {
 
     public void setSoLuong(int soLuong) {
         this.soLuong = soLuong;
+    }
+
+    public int getGia() {
+        return gia;
+    }
+
+    public void setGia(int gia) {
+        this.gia = gia;
     }
 }

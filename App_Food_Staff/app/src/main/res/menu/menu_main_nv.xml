@@ -15,7 +15,7 @@
             <menu>
                 <item
                     android:id="@+id/menu_don_hang_tao"
-                    android:title="Đơn hàng đã thêm" />
+                    android:title="Đơn hàng đã tạo" />
                 <item
                     android:id="@+id/menu_don_hang_thanh_toan"
                     android:title="Đơn hàng đã thanh toán" />

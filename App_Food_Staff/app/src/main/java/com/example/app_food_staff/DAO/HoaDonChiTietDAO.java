@@ -63,6 +63,7 @@ public class HoaDonChiTietDAO {
             ResultSet resultSet = statement.executeQuery(sql);
             while (resultSet.next()){
                 HoaDonChiTietDTO item = new HoaDonChiTietDTO();
+                item.setIdHoaDon(resultSet.getInt("idHoaDon"));
                 item.setIdMonAn(resultSet.getInt("idMonAn"));
                 item.setSoLuong(resultSet.getInt("soLuong"));
                 list.add(item);
@@ -73,5 +74,23 @@ public class HoaDonChiTietDAO {
             e.printStackTrace();
         }
         return list;
+    }
+    public int update(HoaDonChiTietDTO objHoaDonChiTiet){
+        int kq = -1;
+        int idMonAn = objHoaDonChiTiet.getIdMonAn();
+        int idHoaDon = objHoaDonChiTiet.getIdHoaDon();
+        int soLuong = objHoaDonChiTiet.getSoLuong();
+        try {
+            String sql = "UPDATE HoaDonChiTiet\n" +
+                    "SET soLuong = "+ soLuong +"\n" +
+                    "WHERE idMonAn = '"+ idMonAn + "' and idHoaDon = '" +idHoaDon+ "';";
+            Statement statement = this.objConn.createStatement();
+            kq = statement.executeUpdate(sql);
+            Log.e("zzzzzzzzzz", "getAll: xóa oke" );
+        }catch (Exception e){
+            kq = -1;
+            Log.e("zzzzzzzzzz", "getAll: xóa khong thành công" );
+        }
+        return kq;
     }
 }

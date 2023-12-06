@@ -11,6 +11,15 @@ public class NhanVienDTO {
     public NhanVienDTO() {
     }
 
+    public NhanVienDTO(int id, String tenNhanVien, String taiKhoan, String matKhau, String soDienThoai, String CCCD) {
+        this.id = id;
+        this.tenNhanVien = tenNhanVien;
+        this.taiKhoan = taiKhoan;
+        this.matKhau = matKhau;
+        this.soDienThoai = soDienThoai;
+        this.CCCD = CCCD;
+    }
+
     public int getId() {
         return id;
     }

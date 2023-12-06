@@ -39,18 +39,19 @@ public class MonAnFragment extends Fragment {
     MonAnAdapter adapter;
     MonAnDTO item;
     FloatingActionButton fabAdd;
-    EditText edMonAn,edGia;
-    Button btnThem,btnHuy,btnLuu,btnThemAnh;
+    EditText edMonAn, edGia;
+    Button btnThem, btnHuy, btnLuu, btnThemAnh;
     TextView tvId;
     ImageView imgViewMonAn;
     Dialog dialog;
     Bitmap bitmap;
     byte[] hinhAnh;
     private static final int PICK_IMAGE_REQUEST = 1;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_mon_an, container , false);
+        View v = inflater.inflate(R.layout.fragment_mon_an, container, false);
         return v;
     }
 
@@ -72,12 +73,14 @@ public class MonAnFragment extends Fragment {
         });
 
     }
+
     void capNhatLv() {
         list = (ArrayList<MonAnDTO>) dao.getAll();
         adapter = new MonAnAdapter(getActivity(), this, list);
         lvMonAn.setAdapter(adapter);
     }
-    public void xoa(int Id){
+
+    public void xoa(int Id) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle("Delete");
         builder.setMessage("Bạn có muốn xóa không?");
@@ -86,9 +89,9 @@ public class MonAnFragment extends Fragment {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 int kq = dao.delete(Id);
-                if(kq > -1){
+                if (kq > -1) {
                     Toast.makeText(getContext(), "Xóa thành công", Toast.LENGTH_SHORT).show();
-                }else {
+                } else {
                     Toast.makeText(getContext(), "Xóa không thành công", Toast.LENGTH_SHORT).show();
                 }
                 capNhatLv();
@@ -105,9 +108,10 @@ public class MonAnFragment extends Fragment {
         AlertDialog alert = builder.create();
         builder.show();
     }
+
     protected void openDialog(final Context context) {
         dialog = new Dialog(context);
-        dialog.setContentView(R.layout.dialog_mon_an );
+        dialog.setContentView(R.layout.dialog_mon_an);
         edMonAn = dialog.findViewById(R.id.edMonAn);
         edGia = dialog.findViewById(R.id.edGia);
         btnThemAnh = dialog.findViewById(R.id.btnThemAnh);
@@ -131,8 +135,16 @@ public class MonAnFragment extends Fragment {
         btnThem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (edMonAn.getText().toString().trim().isEmpty() || edGia.getText().toString().trim().isEmpty()) {
+                    Toast.makeText(context, "Bạn chưa nhập thông tin mớn ăn", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (bitmap == null) {
+                    Toast.makeText(context, "Bạn chưa chọn ảnh", Toast.LENGTH_SHORT).show();
+                }
                 MonAnDTO item = new MonAnDTO();
                 item.setTenMonAn(edMonAn.getText().toString());
+                String ma = edMonAn.getText().toString();
                 item.setGia(Integer.parseInt(edGia.getText().toString()));
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
@@ -145,14 +157,16 @@ public class MonAnFragment extends Fragment {
                 }
                 capNhatLv();
                 dialog.dismiss();
+
             }
         });
 
         dialog.show();
     }
-    public void openDialogUpdate(final Context context,MonAnDTO objMonAn) {
+
+    public void openDialogUpdate(final Context context, MonAnDTO objMonAn) {
         dialog = new Dialog(context);
-        dialog.setContentView(R.layout.dialog_mon_an_update );
+        dialog.setContentView(R.layout.dialog_mon_an_update);
         edMonAn = dialog.findViewById(R.id.edMonAn);
         edGia = dialog.findViewById(R.id.edGia);
         btnThemAnh = dialog.findViewById(R.id.btnThemAnh);
@@ -163,7 +177,7 @@ public class MonAnFragment extends Fragment {
 
         tvId.setText("Id: " + objMonAn.getId());
         edMonAn.setText(objMonAn.getTenMonAn());
-        edGia.setText(objMonAn.getGia()+"");
+        edGia.setText(objMonAn.getGia() + "");
         hinhAnh = objMonAn.getHinhAnh();
         bitmap = BitmapFactory.decodeByteArray(hinhAnh, 0, hinhAnh.length);
         imgViewMonAn.setImageBitmap(bitmap);
@@ -187,7 +201,7 @@ public class MonAnFragment extends Fragment {
             public void onClick(View view) {
                 objMonAn.setTenMonAn(edMonAn.getText().toString());
                 objMonAn.setGia(Integer.parseInt(edGia.getText().toString()));
-                if(bitmap != null) {
+                if (bitmap != null) {
                     ByteArrayOutputStream stream = new ByteArrayOutputStream();
                     bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
                     byte[] byteArray = stream.toByteArray();
@@ -209,7 +223,7 @@ public class MonAnFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == PICK_IMAGE_REQUEST  && data != null) {
+        if (requestCode == PICK_IMAGE_REQUEST && data != null) {
             Uri selectedImageUri = data.getData();
 
             try {
@@ -222,4 +236,5 @@ public class MonAnFragment extends Fragment {
             }
         }
     }
+
 }

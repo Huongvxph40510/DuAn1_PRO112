@@ -66,7 +66,8 @@ public class TKHDAdapter extends ArrayAdapter<HoaDonDTO> {
             if(item.getTrangThai() == 0 ){
                 tvNhanVienThanhToan.setText("Nhân viên thanh toán: Chưa thanh toán");
                 tvTrangThai.setText("Trạng thái: Chưa thanh toán");
-            }else{tvNhanVienThanhToan.setText("Nhân viên thanh toán: "+ nhanVienThanhToan);
+            }else{
+                tvNhanVienThanhToan.setText("Nhân viên thanh toán: "+ nhanVienThanhToan);
                 tvTrangThai.setText("Trạng thái: Đã thanh toán");
             }
             tvTongTien.setText("Tổng tiền: "+ tongTien);

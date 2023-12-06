@@ -1,6 +1,8 @@
 package com.example.app_food_staff;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -45,26 +47,41 @@ public class ThongTinFragment extends Fragment {
         int id = pref.getInt("ID", 0);
         item = dao.getID(id);
 
-        edTen.setText(item.getTenNhanVien());
-        edTaiKhoan.setText(item.getTaiKhoan());
-        edMatKhau.setText(item.getMatKhau());
-        edSoDienThoai.setText(item.getSoDienThoai());
-        edCCCD.setText(item.getCCCD());
+        capnhat();
 
         btnLuu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (validate() > 0) {
-                    item.setTenNhanVien(edTen.getText().toString());
-                    item.setTaiKhoan(edTaiKhoan.getText().toString());
-                    item.setMatKhau(edMatKhau.getText().toString());
-                    item.setSoDienThoai(edSoDienThoai.getText().toString());
-                    item.setCCCD(edCCCD.getText().toString());
-                    if (dao.update(item) > -1) {
-                        Toast.makeText(getContext(), "Sửa thông tin thành công", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(getContext(), "Sửa thông tin thất bại", Toast.LENGTH_SHORT).show();
-                    }
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                    builder.setTitle("Sửa thông tin cá nhân");
+                    builder.setMessage("Bạn có muốn sửa không?");
+                    builder.setCancelable(true);
+                    builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            item.setTenNhanVien(edTen.getText().toString());
+                            item.setTaiKhoan(edTaiKhoan.getText().toString());
+                            item.setMatKhau(edMatKhau.getText().toString());
+                            item.setSoDienThoai(edSoDienThoai.getText().toString());
+                            item.setCCCD(edCCCD.getText().toString());
+                            if (dao.update(item) > -1) {
+                                Toast.makeText(getContext(), "Sửa thông tin thành công", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(getContext(), "Sửa thông tin thất bại", Toast.LENGTH_SHORT).show();
+                            }
+                            capnhat();
+                        }
+                    });
+                    builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                            capnhat();
+                        }
+                    });
+                    AlertDialog alert = builder.create();
+                    builder.show();
                 }
             }
         });
@@ -77,5 +94,12 @@ public class ThongTinFragment extends Fragment {
         }
         return check;
 
+    }
+    public void capnhat(){
+        edTen.setText(item.getTenNhanVien());
+        edTaiKhoan.setText(item.getTaiKhoan());
+        edMatKhau.setText(item.getMatKhau());
+        edSoDienThoai.setText(item.getSoDienThoai());
+        edCCCD.setText(item.getCCCD());
     }
 }
