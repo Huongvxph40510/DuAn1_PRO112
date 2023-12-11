@@ -225,6 +225,7 @@ public class MonAnFragment extends Fragment {
                 }
                 if (bitmap == null) {
                     Toast.makeText(context, "Bạn chưa chọn ảnh", Toast.LENGTH_SHORT).show();
+                    return;
                 }
                 objMonAn.setTenMonAn(edMonAn.getText().toString());
                 objMonAn.setGia(Integer.parseInt(edGia.getText().toString()));
