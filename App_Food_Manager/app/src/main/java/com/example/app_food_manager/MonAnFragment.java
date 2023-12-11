@@ -209,6 +209,23 @@ public class MonAnFragment extends Fragment {
         btnLuu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (edMonAn.getText().toString().trim().isEmpty() || edGia.getText().toString().trim().isEmpty()) {
+                    Toast.makeText(context, "Bạn chưa nhập thông tin mớn ăn", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                try {
+                    int gia = Integer.parseInt(edGia.getText().toString());
+                    if(gia < 0){
+                        Toast.makeText(context, "Giá phải lớn hơn 0", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                }catch (Exception e){
+                    Toast.makeText(context, "Giá phải là số", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (bitmap == null) {
+                    Toast.makeText(context, "Bạn chưa chọn ảnh", Toast.LENGTH_SHORT).show();
+                }
                 objMonAn.setTenMonAn(edMonAn.getText().toString());
                 objMonAn.setGia(Integer.parseInt(edGia.getText().toString()));
                 if (bitmap != null) {
