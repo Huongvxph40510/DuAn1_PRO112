@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="620dp"
+    android:orientation="vertical"
+    android:padding="10dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thanh Toán"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:layout_gravity="center"
+        android:textColor="#D50000"/>
+    <TextView
+        android:id="@+id/tvId"
+        android:layout_width="match_parent"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        android:text="Mã hóa đơn:"
+        android:textSize="18dp"
+        />
+    <TextView
+        android:id="@+id/tvNhanVienTao"
+        android:layout_width="match_parent"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        android:text="Nhân viên tạo:"
+        android:textSize="18dp"
+        />
+    <TextView
+        android:id="@+id/tvSoBan"
+        android:layout_width="match_parent"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        android:text="Số bàn:"
+        android:textSize="18dp"
+        />
+    <TextView
+        android:id="@+id/tvNgay"
+        android:layout_width="match_parent"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        android:text="Ngày:"
+        android:textSize="18dp"
+        />
+    <TextView
+        android:id="@+id/tvTrangThai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Trạng thái:"
+        android:textSize="18dp"
+        />
+    <TextView
+        android:id="@+id/tvNhanVienThanhToan"
+        android:layout_width="match_parent"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        android:text="Nhân viên tạo:"
+        android:textSize="18dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Danh sách món ăn"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="#00BCD4"
+        android:padding="5dp"/>
+
+    <ListView
+        android:id="@+id/lvMonAn"
+        android:layout_width="match_parent"
+        android:layout_height="340dp"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:id="@+id/tvTongTien"
+            android:layout_width="wrap_content"
+            android:textColor="#00BCD4"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:text="Tổng tiền:"
+            android:textSize="18dp"
+            android:layout_gravity="top|end"
+            />
+    </FrameLayout>
+</LinearLayout>

@@ -87,4 +87,21 @@ public class MonAnDAO {
         }
         return kq;
     }
+    public MonAnDTO getId(int id){
+        MonAnDTO objMonAn = new MonAnDTO();
+        try{
+            String sql = "Select * from MonAn where id =" + id;
+            Statement statement = this.objConn.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()){
+                objMonAn.setId(resultSet.getInt("id"));
+                objMonAn.setTenMonAn(resultSet.getString("tenMonAn"));
+                objMonAn.setGia(resultSet.getInt("gia"));
+                objMonAn.setHinhAnh(resultSet.getBytes("hinhAnh"));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return objMonAn;
+    }
 }

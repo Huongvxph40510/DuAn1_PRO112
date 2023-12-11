@@ -3,6 +3,7 @@ package com.example.app_food_manager.DAO;
 import android.util.Log;
 
 import com.example.app_food_manager.DTO.BanDTO;
+import com.example.app_food_manager.DTO.HoaDonChiTietDTO;
 import com.example.app_food_manager.DataBase.DbSqlServer;
 
 import java.sql.Connection;
@@ -51,5 +52,22 @@ public class HoaDonChiTietDAO {
         }
         return tongTien;
     }
-
+    public List<HoaDonChiTietDTO> getTheoIdHoaDon(int idHoaDon){
+        List<HoaDonChiTietDTO> list = new ArrayList<>();
+        try{
+            String sql = "Select * from HoaDonChiTiet where idHoaDon = " + idHoaDon ;
+            Statement statement = this.objConn.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()){
+                HoaDonChiTietDTO item = new HoaDonChiTietDTO();
+                item.setIdHoaDon(resultSet.getInt("idHoaDon"));
+                item.setIdMonAn(resultSet.getInt("idMonAn"));
+                item.setSoLuong(resultSet.getInt("soLuong"));
+                list.add(item);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return list;
+    }
 }
