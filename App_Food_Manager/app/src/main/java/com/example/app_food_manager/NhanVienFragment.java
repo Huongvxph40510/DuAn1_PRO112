@@ -191,7 +191,12 @@ public class NhanVienFragment extends Fragment {
             Toast.makeText(getContext(), "Bạn phải nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
             check = -1;
         }
+        try {
+            int gia = Integer.parseInt(edSoDienThoai.getText().toString());
+        }catch (Exception e){
+            Toast.makeText(getContext(), "Số điện thoại phải là số", Toast.LENGTH_SHORT).show();
+            check = -1;
+        }
         return check;
-
     }
 }

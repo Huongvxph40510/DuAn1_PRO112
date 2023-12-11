@@ -222,6 +222,16 @@ public class QLHDFragment extends Fragment {
                     Toast.makeText(context, "Bạn chưa nhập số lượng", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                try {
+                    int gia = Integer.parseInt(edSoLuong.getText().toString());
+                    if(gia < 0){
+                        Toast.makeText(context, "Số lượng phải lớn hơn 0", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                }catch (Exception e){
+                    Toast.makeText(context, "Số lượng phải là số", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 HoaDonChiTietDTO objHoaDonChiTiet = new HoaDonChiTietDTO();
                 objHoaDonChiTiet.setIdMonAn(idMonAn);
                 objHoaDonChiTiet.setSoLuong(Integer.parseInt(edSoLuong.getText().toString()));
@@ -251,6 +261,16 @@ public class QLHDFragment extends Fragment {
             public void onClick(View view) {
                 if(edSoLuong.getText().toString().isEmpty()){
                     Toast.makeText(context, "Bạn chưa nhập số lượng", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                try {
+                    int gia = Integer.parseInt(edSoLuong.getText().toString());
+                    if(gia < 0){
+                        Toast.makeText(context, "Số lượng phải lớn hơn 0", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                }catch (Exception e){
+                    Toast.makeText(context, "Số lượng phải là số", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 objHoaDonChiTiet.setSoLuong(Integer.parseInt(edSoLuong.getText().toString()));

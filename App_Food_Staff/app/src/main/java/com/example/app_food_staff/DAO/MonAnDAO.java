@@ -31,9 +31,7 @@ public class MonAnDAO {
                 objMonAn.setHinhAnh(resultSet.getBytes("hinhAnh"));
                 list.add(objMonAn);
             }
-            Log.e("zzzzzzzzzz", "getAll: đọc oke " );
         }catch (Exception e){
-            Log.e("zzzzzzzzzz", "getAll: Có lỗi truy vấn dữ liệu " );
             e.printStackTrace();
         }
         return list;
@@ -50,9 +48,7 @@ public class MonAnDAO {
                 objMonAn.setGia(resultSet.getInt("gia"));
                 objMonAn.setHinhAnh(resultSet.getBytes("hinhAnh"));
             }
-            Log.e("zzzzzzzzzz", "getAll: đọc oke " );
         }catch (Exception e){
-            Log.e("zzzzzzzzzz", "getAll: Có lỗi truy vấn dữ liệu " );
             e.printStackTrace();
         }
         return objMonAn;

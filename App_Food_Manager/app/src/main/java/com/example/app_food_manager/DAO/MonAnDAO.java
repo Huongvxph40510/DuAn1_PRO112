@@ -24,10 +24,8 @@ public class MonAnDAO {
             String sql = "DELETE FROM MonAn WHERE id='" +id +"'";
             Statement statement = this.objConn.createStatement();
             kq = statement.executeUpdate(sql);
-            Log.e("zzzzzzzzzz", "getAll: xóa oke" );
         }catch (Exception e){
             kq = -1;
-            Log.e("zzzzzzzzzz", "getAll: xóa khong thành công" );
         }
         return kq;
     }
@@ -45,9 +43,7 @@ public class MonAnDAO {
                 objMonAn.setHinhAnh(resultSet.getBytes("hinhAnh"));
                 list.add(objMonAn);
             }
-            Log.e("zzzzzzzzzz", "getAll: đọc oke " );
         }catch (Exception e){
-            Log.e("zzzzzzzzzz", "getAll: Có lỗi truy vấn dữ liệu " );
             e.printStackTrace();
         }
         return list;
@@ -66,10 +62,8 @@ public class MonAnDAO {
                 kq = 1;
             }
 
-            Log.e("zzzzzzzzzz", "getAll: xóa oke" );
         }catch (Exception e){
             kq = -1;
-            Log.e("zzzzzzzzzz", "getAll: xóa khong thành công" );
         }
         return kq;
     }
@@ -88,10 +82,8 @@ public class MonAnDAO {
                 statement.executeUpdate();
                 kq = 1;
             }
-            Log.e("zzzzzzzzzz", "getAll: xóa oke" );
         }catch (Exception e){
             kq = -1;
-            Log.e("zzzzzzzzzz", "getAll: xóa khong thành công" );
         }
         return kq;
     }

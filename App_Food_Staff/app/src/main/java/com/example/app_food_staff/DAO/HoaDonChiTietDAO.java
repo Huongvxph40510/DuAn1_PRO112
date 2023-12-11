@@ -31,9 +31,7 @@ public class HoaDonChiTietDAO {
             while (resultSet.next()){
                 tongTien = resultSet.getInt(1);
             }
-            Log.e("zzzzzzzzzz", "getAll: đọc oke " );
         }catch (Exception e){
-            Log.e("zzzzzzzzzz", "getAll: Có lỗi truy vấn dữ liệu " );
             e.printStackTrace();
         }
         return tongTien;
@@ -48,10 +46,8 @@ public class HoaDonChiTietDAO {
                     "VALUES ("+idHoaDon+"," +idMonAn+"," +soLuong+");";
             Statement statement = this.objConn.createStatement();
             kq = statement.executeUpdate(sql);
-            Log.e("zzzzzzzzzz", "getAll: xóa oke" );
         }catch (Exception e){
             kq = -1;
-            Log.e("zzzzzzzzzz", "getAll: xóa khong thành công" );
         }
         return kq;
     }
@@ -68,9 +64,7 @@ public class HoaDonChiTietDAO {
                 item.setSoLuong(resultSet.getInt("soLuong"));
                 list.add(item);
             }
-            Log.e("zzzzzzzzzz", "getAll: đọc oke " );
         }catch (Exception e){
-            Log.e("zzzzzzzzzz", "getAll: Có lỗi truy vấn dữ liệu " );
             e.printStackTrace();
         }
         return list;
@@ -86,10 +80,8 @@ public class HoaDonChiTietDAO {
                     "WHERE idMonAn = '"+ idMonAn + "' and idHoaDon = '" +idHoaDon+ "';";
             Statement statement = this.objConn.createStatement();
             kq = statement.executeUpdate(sql);
-            Log.e("zzzzzzzzzz", "getAll: xóa oke" );
         }catch (Exception e){
             kq = -1;
-            Log.e("zzzzzzzzzz", "getAll: xóa khong thành công" );
         }
         return kq;
     }

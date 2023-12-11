@@ -30,6 +30,7 @@ public class ThongTinFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_thong_tin,container,false);
         return v;
+
     }
 
     @Override
@@ -91,6 +92,13 @@ public class ThongTinFragment extends Fragment {
         if (edTen.getText().length() == 0 || edTaiKhoan.getText().length() == 0 || edMatKhau.getText().length() == 0 || edSoDienThoai.getText().length() == 0 || edCCCD.getText().length() == 0) {
             Toast.makeText(getContext(), "Bạn phải nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
             check = -1;
+        }
+        try {
+            int sdt = Integer.parseInt(edSoDienThoai.getText().toString());
+        }catch (Exception e){
+            Toast.makeText(getContext(), "Số điện thoại phải là số", Toast.LENGTH_SHORT).show();
+            check = -1;
+            capnhat();
         }
         return check;
 

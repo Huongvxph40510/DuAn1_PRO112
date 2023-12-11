@@ -30,9 +30,7 @@ public class BanDAO {
                 objBan.setTrangThai(resultSet.getInt("trangThai"));
                 list.add(objBan);
             }
-            Log.e("zzzzzzzzzz", "getAll: đọc oke " );
         }catch (Exception e){
-            Log.e("zzzzzzzzzz", "getAll: Có lỗi truy vấn dữ liệu " );
             e.printStackTrace();
         }
         return list;
@@ -48,9 +46,7 @@ public class BanDAO {
                 objBan.setSoBan(resultSet.getString("soBan"));
                 objBan.setTrangThai(resultSet.getInt("trangThai"));
             }
-            Log.e("zzzzzzzzzz", "getAll: đọc oke " );
         }catch (Exception e){
-            Log.e("zzzzzzzzzz", "getAll: Có lỗi truy vấn dữ liệu " );
             e.printStackTrace();
         }
         return objBan;
@@ -69,10 +65,8 @@ public class BanDAO {
                     "WHERE id = '"+ id + "';";
             Statement statement = this.objConn.createStatement();
             kq = statement.executeUpdate(sql);
-            Log.e("zzzzzzzzzz", "getAll: xóa oke" );
         }catch (Exception e){
             kq = -1;
-            Log.e("zzzzzzzzzz", "getAll: xóa khong thành công" );
         }
         return kq;
     }

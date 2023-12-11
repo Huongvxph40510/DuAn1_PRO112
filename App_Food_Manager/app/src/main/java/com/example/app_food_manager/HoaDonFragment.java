@@ -15,13 +15,16 @@ import com.example.app_food_manager.DAO.BanDAO;
 import com.example.app_food_manager.DAO.HoaDonDAO;
 import com.example.app_food_manager.DTO.HoaDonDTO;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class HoaDonFragment extends Fragment {
     ListView lvHoaDon;
     ArrayList<HoaDonDTO> list;
     static HoaDonDAO dao;
     HoaDonAdapter adapter;
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -38,7 +41,9 @@ public class HoaDonFragment extends Fragment {
         capNhatLv();
     }
     void capNhatLv() {
-        list = (ArrayList<HoaDonDTO>) dao.getAll();
+        Date d = new Date();
+        String ngay = sdf.format(d);
+        list = (ArrayList<HoaDonDTO>) dao.getByDate(ngay);
         adapter = new HoaDonAdapter(getActivity(), this, list);
         lvHoaDon.setAdapter(adapter);
     }

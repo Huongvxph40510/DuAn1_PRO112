@@ -15,6 +15,7 @@ import java.util.List;
 public class HoaDonDAO {
     Connection objConn;
 
+
     public HoaDonDAO() {
         DbSqlServer db = new DbSqlServer();
         objConn = db.openConnect();
@@ -36,9 +37,7 @@ public class HoaDonDAO {
                 objHoaDon.setTrangThai(resultSet.getInt(6));
                 list.add(objHoaDon);
             }
-            Log.e("zzzzzzzzzz", "getAll: đọc oke ");
         } catch (Exception e) {
-            Log.e("zzzzzzzzzz", "getAll: Có lỗi truy vấn dữ liệu ");
             e.printStackTrace();
         }
         return list;
@@ -60,9 +59,7 @@ public class HoaDonDAO {
                 objHoaDon.setTrangThai(resultSet.getInt(6));
                 list.add(objHoaDon);
             }
-            Log.e("zzzzzzzzzz", "getAll: đọc oke ");
         } catch (Exception e) {
-            Log.e("zzzzzzzzzz", "getAll: Có lỗi truy vấn dữ liệu ");
             e.printStackTrace();
         }
         return list;
@@ -79,9 +76,7 @@ public class HoaDonDAO {
 
                 tongHoaDon = resultSet.getInt(1);
             }
-            Log.e("zzzzzzzzzz", "getAll: đọc oke ");
         } catch (Exception e) {
-            Log.e("zzzzzzzzzz", "getAll: Có lỗi truy vấn dữ liệu ");
             e.printStackTrace();
         }
         return tongHoaDon;

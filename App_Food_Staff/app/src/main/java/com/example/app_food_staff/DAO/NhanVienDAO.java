@@ -33,9 +33,7 @@ public class NhanVienDAO {
                 objNhanVien.setSoDienThoai(resultSet.getString("soDienThoai"));
                 objNhanVien.setCCCD(resultSet.getString("CCCD"));
             }
-            Log.e("zzzzzzzzzz", "getAll: đọc oke " );
         }catch (Exception e){
-            Log.e("zzzzzzzzzz", "getAll: Có lỗi truy vấn dữ liệu " );
             e.printStackTrace();
         }
         return objNhanVien;
@@ -55,9 +53,7 @@ public class NhanVienDAO {
                 objNhanVien.setSoDienThoai(resultSet.getString("soDienThoai"));
                 objNhanVien.setCCCD(resultSet.getString("CCCD"));
             }
-            Log.e("zzzzzzzzzz", "getAll: đọc oke " );
         }catch (Exception e){
-            Log.e("zzzzzzzzzz", "getAll: Có lỗi truy vấn dữ liệu " );
             e.printStackTrace();
         }
         return objNhanVien;
@@ -76,10 +72,8 @@ public class NhanVienDAO {
                     "WHERE id = '"+ id + "';";
             Statement statement = this.objConn.createStatement();
             kq = statement.executeUpdate(sql);
-            Log.e("zzzzzzzzzz", "getAll: xóa oke" );
         }catch (Exception e){
             kq = -1;
-            Log.e("zzzzzzzzzz", "getAll: xóa khong thành công" );
         }
         return kq;
     }

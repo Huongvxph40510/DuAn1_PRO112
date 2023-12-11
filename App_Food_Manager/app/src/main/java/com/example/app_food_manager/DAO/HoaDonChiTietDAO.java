@@ -29,9 +29,7 @@ public class HoaDonChiTietDAO {
             while (resultSet.next()){
                 tongTien = resultSet.getInt(1);
             }
-            Log.e("zzzzzzzzzz", "getAll: đọc oke " );
         }catch (Exception e){
-            Log.e("zzzzzzzzzz", "getAll: Có lỗi truy vấn dữ liệu " );
             e.printStackTrace();
         }
         return tongTien;
@@ -48,9 +46,7 @@ public class HoaDonChiTietDAO {
             while (resultSet.next()){
                 tongTien = resultSet.getInt(1);
             }
-            Log.e("zzzzzzzzzz", "getAll: đọc oke " );
         }catch (Exception e){
-            Log.e("zzzzzzzzzz", "getAll: Có lỗi truy vấn dữ liệu " );
             e.printStackTrace();
         }
         return tongTien;

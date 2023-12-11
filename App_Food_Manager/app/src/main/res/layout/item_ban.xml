@@ -1,30 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/img_table"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
     >
-    <ImageButton
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:src="@drawable/ic_edit"
-        android:id="@+id/btnEdit"
-        />
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:src="@drawable/ic_delete"
-        android:id="@+id/btnDel"
-        />
+        android:src="@drawable/icon_table"
+        android:layout_gravity="center|start"/>
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="80dp"
-        android:background="#66000000"
-        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center|start"
+        android:layout_marginLeft="80dp"
         android:padding="5dp">
         <TextView
             android:layout_width="wrap_content"
@@ -32,8 +22,7 @@
             android:id="@+id/tvBan"
             android:text="Bàn số 001"
             android:textSize="18dp"
-            android:layout_marginLeft="10dp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textStyle="bold"
             />
         <TextView
@@ -42,10 +31,31 @@
             android:id="@+id/tvTrangThai"
             android:text="Trạng thái: còn trống"
             android:textSize="18dp"
-            android:layout_marginLeft="100dp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textStyle="bold"
             />
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center|right"
+        android:padding="5dp">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:src="@drawable/ic_edit"
+            android:id="@+id/btnEdit"
+            />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:src="@drawable/ic_delete"
+            android:id="@+id/btnDel"
+            />
+    </LinearLayout>
 
-</LinearLayout>
+
+</FrameLayout>

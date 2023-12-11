@@ -41,9 +41,7 @@ public class HoaDonDAO {
                 objHoaDon.setTrangThai(resultSet.getInt(6));
                 list.add(objHoaDon);
             }
-            Log.e("zzzzzzzzzz", "getAll: đọc oke ");
         } catch (Exception e) {
-            Log.e("zzzzzzzzzz", "getAll: Có lỗi truy vấn dữ liệu ");
             e.printStackTrace();
         }
         return list;
@@ -58,10 +56,8 @@ public class HoaDonDAO {
                     "VALUES ("+idNhanVienTao+"," +idBan+",'" +ngayTao+"');";
             Statement statement = this.objConn.createStatement();
             kq = statement.executeUpdate(sql);
-            Log.e("zzzzzzzzzz", "getAll: xóa oke" );
         }catch (Exception e){
             kq = -1;
-            Log.e("zzzzzzzzzz", "getAll: xóa khong thành công" );
         }
         return kq;
     }
@@ -75,10 +71,8 @@ public class HoaDonDAO {
             while (resultSet.next()) {
                 id = resultSet.getInt("id");
             }
-            Log.e("zzzzzzzzzz", "getAll: xóa oke" );
         }catch (Exception e){
             id = -1;
-            Log.e("zzzzzzzzzz", "getAll: xóa khong thành công" );
         }
         return id;
     }
@@ -98,9 +92,7 @@ public class HoaDonDAO {
                 objHoaDon.setTrangThai(resultSet.getInt(6));
                 list.add(objHoaDon);
             }
-            Log.e("zzzzzzzzzz", "getAll: đọc oke " );
         }catch (Exception e){
-            Log.e("zzzzzzzzzz", "getAll: Có lỗi truy vấn dữ liệu " );
             e.printStackTrace();
         }
         return list;
@@ -115,9 +107,7 @@ public class HoaDonDAO {
             while (resultSet.next()){
                 tongHoaDon = resultSet.getInt(1);
             }
-            Log.e("zzzzzzzzzz", "getAll: đọc oke " );
         }catch (Exception e){
-            Log.e("zzzzzzzzzz", "getAll: Có lỗi truy vấn dữ liệu " );
             e.printStackTrace();
         }
         return tongHoaDon;
@@ -138,9 +128,7 @@ public class HoaDonDAO {
                 objHoaDon.setTrangThai(resultSet.getInt(6));
                 list.add(objHoaDon);
             }
-            Log.e("zzzzzzzzzz", "getAll: đọc oke " );
         }catch (Exception e){
-            Log.e("zzzzzzzzzz", "getAll: Có lỗi truy vấn dữ liệu " );
             e.printStackTrace();
         }
         return list;
@@ -156,9 +144,7 @@ public class HoaDonDAO {
             while (resultSet.next()){
                 tongHoaDon = resultSet.getInt(1);
             }
-            Log.e("zzzzzzzzzz", "getAll: đọc oke " );
         }catch (Exception e){
-            Log.e("zzzzzzzzzz", "getAll: Có lỗi truy vấn dữ liệu " );
             e.printStackTrace();
         }
         return tongHoaDon;
@@ -171,10 +157,8 @@ public class HoaDonDAO {
                     "WHERE id = '"+ idHoaDon + "';";
             Statement statement = this.objConn.createStatement();
             kq = statement.executeUpdate(sql);
-            Log.e("zzzzzzzzzz", "getAll: xóa oke" );
         }catch (Exception e){
             kq = -1;
-            Log.e("zzzzzzzzzz", "getAll: xóa khong thành công" );
         }
         return kq;
     }
@@ -192,9 +176,7 @@ public class HoaDonDAO {
                 objHoaDon.setIdNhanVienThanToan(resultSet.getInt(5));
                 objHoaDon.setTrangThai(resultSet.getInt(6));
             }
-            Log.e("zzzzzzzzzz", "getAll: xóa oke" );
         }catch (Exception e){
-            Log.e("zzzzzzzzzz", "getAll: xóa khong thành công" );
         }
         return objHoaDon;
     }
